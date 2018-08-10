@@ -7,15 +7,15 @@ new Vue({
         attackRecord: []
     },
     methods: {
-        toggleGame: function() {
+        toggleGame: function () {
             this.gameRunning = !this.gameRunning
             this.playerHealth = 100
             this.monsterHealth = 100
         },
-        attack: function() {
-            let damageM = this.calculateDamage(3,10)
+        attack: function () {
+            let damageM = this.calculateDamage(3, 10)
             this.monsterHealth -= damageM
-            this.attackRecord.push({actor: 'Player', action: 'attacks', damage: damageM, isPlayer: true})
+            this.attackRecord.push({ actor: 'Player', action: 'attacks', damage: damageM, isPlayer: true })
             if (this.checkWin()) {
                 return
             }
@@ -30,7 +30,7 @@ new Vue({
                 return
             }
 
-           this.monsterAttack()
+            this.monsterAttack()
         },
         heal: function () {
             if (this.playerHealth <= 90) {
@@ -42,7 +42,7 @@ new Vue({
                 this.attackRecord.push({ actor: 'Player', action: 'heals', damage: healAmount, isPlayer: true })
             }
         },
-        giveUp: function() {
+        giveUp: function () {
             this.gameRunning = false
         },
         monsterAttack() {
