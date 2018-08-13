@@ -8,19 +8,19 @@
                     <!-- Full Name (First Name + Last Name) -->
                     <div class="form-group">
                         <label for="name">Name
-                            <input id="name"type="text" class="form-control" v-model="user.name">
+                            <input id="name" type="text" class="form-control" v-model="user.name">
                         </label>
                     </div>
                     <!-- Mail -->
                     <div class="form-group">
                         <label for="email">email
-                            <input id="email"type="text" class="form-control" v-model="user.email">
+                            <input id="email" type="text" class="form-control" v-model="user.email">
                         </label>
                     </div>
                     <!-- Password -->
                     <div class="form-group">
                         <label for="password">password
-                            <input id="password"type="password" class="form-control" v-model="user.password">
+                            <input id="password" type="password" class="form-control" v-model="user.password">
                         </label>
                     </div>
                     <!-- Store Data? Yes/No -->
@@ -35,7 +35,7 @@
                     <!-- Only display the Form if it has NOT been submitted -->
                     <!-- Display the Data Summary ONCE the Form HAS been submitted -->
 
-                    <input type="submit" @click.prevent="handleSubmit"value="Submit">
+                    <input type="submit" @click.prevent="handleSubmit" value="Submit">
 
                     <!-- Exercise 3 -->
                     <!-- Edit the Example from above and create a custom "Full Name" Control -->
