@@ -5,7 +5,8 @@
                     class="list-group-item"
                     v-for="server in servers"
                     :key="server.id"
-                    @click="selectServer(server.id)">
+                    @click="selectServer(server)" 
+                    @changeStatus="server.status = $event">
                         Server #{{ server.id }}
             </li>
         </ul>
@@ -17,8 +18,8 @@ import { eventBus } from "../../main";
 
 export default {
   methods: {
-    selectServer(id) {
-      eventBus.selectServer(id);
+    selectServer(server) {
+      eventBus.selectServer(server);
     }
   },
   data: function() {

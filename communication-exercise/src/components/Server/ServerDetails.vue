@@ -1,6 +1,8 @@
 <template>
     <div class="col-xs-12 col-sm-6">
-        <p>Server {{ selectedServer }}</p>
+        <p v-if="this.selectedServer">Server #{{ selectedServer.id }}</p>
+        <p v-if="this.selectedServer">Status: {{ selectedServer.status }}</p>
+        <button @click='changeStatus'>Change Status</button>
     </div>
 
 </template>
@@ -10,9 +12,15 @@ import { eventBus } from "../../main";
 export default {
   props: ["selectedServer"],
   created() {
-    eventBus.$on("SelectServer", serverId => {
-      this.selectedServer = serverId;
+    eventBus.$on("SelectServer", server => {
+      this.selectedServer = server;
     });
+  },
+  methods: {
+    changeStatus() {
+      eventBus.$emit("changeStatus", "Fine");
+      this.selectedServer.status = "Fine";
+    }
   }
 };
 </script>
